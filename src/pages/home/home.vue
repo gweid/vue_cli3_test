@@ -1,6 +1,6 @@
 <template>
   <div class>
-    <p>hello vue</p>
+    <p>首页</p>
   </div>
 </template>
 
