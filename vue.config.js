@@ -4,7 +4,8 @@ module.exports = {
 
     // 配置跨域代理
     // devServer: {
-    //     host: '10.8.0.116',
+    //     open: false, // 是否自动打开浏览器页面
+    //     host: '0.0.0.0',
     //     port: 8080,
     //     disableHostCheck: true,
     //     proxy: {
