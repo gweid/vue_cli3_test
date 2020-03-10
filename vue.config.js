@@ -23,4 +23,20 @@ module.exports = {
 
     // webpack 配置
     chainWebpack(config) {},
+
+    css: {
+      loaderOptions: {
+        stylus: {
+          'resolve url': true,
+          'import': []
+        }
+      }
+    },
+
+    pluginOptions: {
+      'cube-ui': {
+        postCompile: true,
+        theme: false
+      }
+    }
 }

@@ -8,7 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "axios": "^0.19.2",
+    "cube-ui": "~1.12.15",
     "dayjs": "^1.8.22",
     "element-ui": "^2.4.5",
     "qs": "^6.9.1",
@@ -29,9 +31,11 @@
     "eslint-plugin-vue": "^6.1.2",
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
     "sass-loader": "^8.0.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-cube-ui": "~0.2.5",
     "vue-cli-plugin-element": "~1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
@@ -55,5 +59,11 @@
     "not ie <= 11",
     "Android >= 4.0",
     "iOS >= 8"
-  ]
+  ],
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/src/modules/${member}",
+      "kebabCase": true
+    }
+  }
 }
