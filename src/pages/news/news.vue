@@ -3,7 +3,7 @@
     <p>新闻页</p>
     <div>
       <button @click="reduce">-</button>
-      <span>{{$store.state.count}}</span>
+      <span>{{$store.state.moduleA.count}}</span>
       <button @click="add">+</button>
     </div>
     <router-view></router-view>
@@ -37,8 +37,10 @@ export default {
     // reduce() {
     //   this.$store.commit("reduceCount");
     // },
-    ...mapActions({
-      add: "handelAdd",  // add 方法映射 vuex 的 action 的 handelAdd
+
+    // 映射 vuex action
+    ...mapActions("moduleA", {
+      add: "handelAdd", // add 方法映射 vuex 的 action 的 handelAdd
       reduce: "handelReduce"
     })
   }
