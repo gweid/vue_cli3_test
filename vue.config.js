@@ -1,6 +1,9 @@
 module.exports = {
-    lintOnSave: false, // true开启 false 关闭 eslint
-    productionSourceMap: true, // 生产环境是否需要源码映射
+    // true开启 false 关闭 eslint
+    lintOnSave: false,
+
+    // 生产环境是否需要源码映射
+    productionSourceMap: true,
 
     // 配置跨域代理
     // devServer: {
@@ -19,5 +22,5 @@ module.exports = {
     // },
 
     // webpack 配置
-    chainWebpack(config) {}
+    chainWebpack(config) {},
 }

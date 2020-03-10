@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "core-js": "^3.6.4",
     "dayjs": "^1.8.22",
     "element-ui": "^2.4.5",
     "qs": "^6.9.1",
@@ -31,6 +30,8 @@
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "vue-cli-plugin-element": "~1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
@@ -50,6 +51,9 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not ie <= 11",
+    "Android >= 4.0",
+    "iOS >= 8"
   ]
 }
