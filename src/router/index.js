@@ -9,8 +9,7 @@ const Mine = () => import('@/pages/mine/mine.vue')
 const News = () => import('@/pages/news/news.vue')
 const NewsDetail = () => import('@/pages/newsDetail/newsDetail.vue')
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     redirect: '/home'
   },
@@ -25,7 +24,7 @@ const routes = [
   {
     name: 'mine',
     path: '/mine/:id',
-    props: true,
+    props: true, // 允许传的 id 在页面中以 props 接收
     component: Mine,
     meta: {
       requireAuth: false
@@ -39,12 +38,10 @@ const routes = [
     meta: {
       requireAuth: false
     },
-    children: [
-      {
-        path: 'detail',
-        component: NewsDetail
-      }
-    ]
+    children: [{
+      path: 'detail',
+      component: NewsDetail
+    }]
   }
 ]
 
@@ -53,10 +50,10 @@ const router = new VueRouter({
   routes
 })
 
-// 路由守卫
+// 全局路由守卫
 router.beforeEach((to, from, next) => {
-  if (to.meta.requireAuth) {
-    // if (state.userInfo.token) {
+  if (to.meta.requireAuth) { // 是否需要登录
+    // if (state.userInfo.token) { // 是否有 token
     //     next()
     // } else {
     //     next({
