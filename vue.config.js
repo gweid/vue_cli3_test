@@ -5,7 +5,7 @@ module.exports = {
     // 生产环境是否需要源码映射
     productionSourceMap: true,
 
-    // 配置跨域代理
+    // 配置跨域代理gau
     // devServer: {
     //     open: false, // 是否自动打开浏览器页面
     //     host: '0.0.0.0',
