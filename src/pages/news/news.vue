@@ -6,12 +6,18 @@
       <span>{{$store.state.moduleA.count}}</span>
       <button @click="add">+</button>
     </div>
+    <div>
+      <button @click="getStorage">获取localstorage</button>
+      <span>--------------</span>
+      <button @click="setStorage">设置localstorage</button>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex"; // vuex 的 action 高级用法， 映射
+import { lStorage } from "@/common/storage";
 
 export default {
   components: {},
@@ -42,7 +48,15 @@ export default {
     ...mapActions("moduleA", {
       add: "handelAdd", // add 方法映射 vuex 的 action 的 handelAdd
       reduce: "handelReduce"
-    })
+    }),
+
+    getStorage() {
+      let res = lStorage.getItem("username");
+      console.log(res);
+    },
+    setStorage() {
+      lStorage.setItem("username", { name: "jack" });
+    }
   }
 };
 </script>
