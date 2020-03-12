@@ -31,7 +31,7 @@ const routes = [{
   },
   {
     name: 'mine',
-    path: '/mine/:id',
+    path: '/mine',
     props: true, // 允许传的 id 在页面中以 props 接收
     component: Mine,
     meta: {
