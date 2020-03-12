@@ -4,6 +4,10 @@ import Qs from "qs"
 import {
     jsonSort
 } from "./tools"
+import {
+    lStorage
+} from "./storage"
+import router from "../router"
 
 const axios = Axios.create({
     baseURL: Config.BASEURL,
@@ -16,6 +20,7 @@ const axios = Axios.create({
         // transformRequest 方法只适用 post put等，对 get 请求没用，需要做处理
         if (data == undefined || data == null) return
         // 合并参数
+        
         const arr = []
         for (const key in data) {
             arr.push(`${key}=${data[key]}`)
@@ -45,7 +50,7 @@ axios.interceptors.response.use(
     (result) => {
         console.log("===========================响应结果======================");
         console.log(result.data);
-        
+
         return result.data;
     },
     (error) => {

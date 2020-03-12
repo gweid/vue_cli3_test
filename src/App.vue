@@ -2,10 +2,12 @@
   <div id="app">
     <div>
       <router-link to="/home">home</router-link>
-      <router-link to="/mine/123">   |  mine</router-link>
-      <router-link to="/news">   |  news</router-link>
+      <router-link to="/mine/123">| mine</router-link>
+      <router-link to="/news">| news</router-link>
     </div>
-    <router-view></router-view>
+    <transition>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 

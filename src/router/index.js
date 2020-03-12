@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import {
+  lStorage
+} from "@/common/storage";
 
 Vue.use(VueRouter)
 
@@ -13,16 +16,17 @@ const NewsDetail = () => import('@/pages/newsDetail/newsDetail.vue')
 const routes = [{
     path: "/login",
     component: Login
-  }, {
+  },
+  {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     name: 'home',
     path: '/home',
     component: Home,
     meta: {
-      requireAuth: false
+      requireAuth: true
     }
   },
   {
@@ -40,7 +44,7 @@ const routes = [{
     props: true,
     component: News,
     meta: {
-      requireAuth: false
+      requireAuth: true
     },
     children: [{
       path: 'detail',
@@ -50,23 +54,25 @@ const routes = [{
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
+  // base: "",
   routes
 })
 
 // 全局路由守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) { // 是否需要登录
-    next({
-      path: "/login"
-    })
-    // if (state.userInfo.token) { // 是否有 token
-    //     next()
-    // } else {
-    //     next({
-    //         path: '/login'
-    //     })
-    // }
+    let token = lStorage.getItem('token')
+    if (token) { // 是否有 token
+      next()
+    } else {
+      next({
+        path: '/login',
+        query: {
+          redirect: to.path // 登录后回撤到哪里
+        }
+      })
+    }
   } else {
     next()
   }

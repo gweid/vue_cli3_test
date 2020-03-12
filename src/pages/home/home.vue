@@ -12,8 +12,6 @@ export default {
   components: {},
   data() {
     return {
-      username: "15571204261",
-      password: "123456",
       column1: [
         { text: "剧毒", value: "剧毒" },
         { text: "蚂蚁", value: "蚂蚁" },
@@ -22,10 +20,7 @@ export default {
     };
   },
   async mounted() {
-    let ret = await login({
-      mobile: this.username,
-      password: this.password
-    });
+    
   },
   methods: {
     showPicker() {
