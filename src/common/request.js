@@ -1,3 +1,7 @@
+/**
+ * 普通封装 axios
+ */
+
 import Axios from "axios"
 import Config from "../config/config"
 import Qs from "qs"
