@@ -49,6 +49,14 @@ class Request {
 
         const axios = Axios.create(Object.assign(this.config, option))
 
+        this.reqIntercept(axios) // 请求拦截
+        this.resIntercept(axios) // 响应拦截
+
+        return axios
+    }
+
+    // 请求拦截
+    reqIntercept(axios) {
         // 请求拦截
         axios.interceptors.request.use(
             (config) => {
@@ -61,7 +69,10 @@ class Request {
                 return Promise.reject(error)
             }
         )
+    }
 
+    // 响应拦截
+    resIntercept(axios) {
         // 响应拦截
         axios.interceptors.response.use(
             (result) => {
@@ -85,10 +96,9 @@ class Request {
                 return Promise.reject(error)
             }
         )
-
-        return axios
     }
 
+    // get 请求
     get(url, body = {}) {
         if (Object.keys(body).length > 0) {
             return this.request().get(`${url}?${jsonSort(body)}`)
@@ -96,6 +106,7 @@ class Request {
         return this.request().get(url);
     }
 
+    // post 请求
     post(url, body) {
         return this.request().post(url, body)
     }
