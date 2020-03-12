@@ -26,7 +26,7 @@ const routes = [{
     path: '/home',
     component: Home,
     meta: {
-      requireAuth: true
+      requireAuth: false
     }
   },
   {
@@ -35,7 +35,7 @@ const routes = [{
     props: true, // 允许传的 id 在页面中以 props 接收
     component: Mine,
     meta: {
-      requireAuth: true
+      requireAuth: true  // 需要登录的页面
     }
   },
   {
@@ -44,7 +44,7 @@ const routes = [{
     props: true,
     component: News,
     meta: {
-      requireAuth: true
+      requireAuth: false
     },
     children: [{
       path: 'detail',
@@ -63,6 +63,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) { // 是否需要登录
     let token = lStorage.getItem('token')
+
     if (token) { // 是否有 token
       next()
     } else {

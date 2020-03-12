@@ -11,6 +11,11 @@
       <span>--------------</span>
       <button @click="setStorage">设置localstorage</button>
     </div>
+    <div class="new-list">
+      <div class="list-item" @click="toNewsDeatil">
+        <p>商品</p>
+      </div>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -56,10 +61,27 @@ export default {
     },
     setStorage() {
       lStorage.setItem("username", { name: "jack" });
+    },
+    toNewsDeatil() {
+      this.$router.push("/news/newsDeatil");
     }
   }
 };
 </script>
 
-<style lang="" scoped>
+<style lang="scss" scoped>
+.new-list {
+  width: 100%;
+  padding-left: 0.2rem;
+
+  .list-item {
+    width: 9.6rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    margin-top: 0.266667rem;
+    border-radius: 0.16rem;
+    background-color: #f5f5f5;
+  }
+}
 </style>

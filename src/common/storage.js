@@ -44,6 +44,7 @@ class storageData {
         if (!this._store) return
         this._store.removeItem(key)
     }
+    
     /**
      * 删除本地所有缓存
      * @param {string} key 
