@@ -1,3 +1,5 @@
+const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
+
 const plugins = [
   [
     "component",
@@ -8,7 +10,6 @@ const plugins = [
   ]
 ]
 
-const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // 去除 console.log
 if (IS_PROD) {
   plugins.push("transform-remove-console")
