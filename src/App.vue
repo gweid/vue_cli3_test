@@ -43,9 +43,7 @@ export default {
   computed: {
     showTabBar() {
       return this.tabs.some(item => {
-        if (this.$route.path == item.value) {
-          return true;
-        }
+        return this.$route.path == item.value;
       });
     }
   },

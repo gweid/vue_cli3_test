@@ -3,7 +3,7 @@
  */
 
 import Axios from "axios"
-import Config from "../config/config"
+import Config from "@config/config"
 import Qs from "qs"
 import {
     jsonSort
