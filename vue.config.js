@@ -83,6 +83,9 @@ module.exports = {
       stylus: {
         'resolve url': true,
         'import': []
+      },
+      sass: {
+        prependData: '@import "style/common.scss";' // 全局引入
       }
     }
   },
