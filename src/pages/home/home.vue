@@ -2,7 +2,7 @@
   <div class>
     <p class="title">首页</p>
     <cube-button @click="showPicker">Picker</cube-button>
-    <p class="text">哈哈哈哈哈哈哈哈哈奥哈哈或哈或哈或或或或或哈哈哈哈哈哈哈哈哈哈哈哈哈哈或哈或</p>
+    <p class="text">哈哈哈哈哈哈哈哈哈奥哈哈或哈或哈或或或或或哈哈哈哈哈哈哈哈哈哈哈哈哈哈或哈或啊就就安静安静啊就家啊啊就就安静安静啊就就安静安静啊</p>
   </div>
 </template>
 
@@ -49,6 +49,6 @@ export default {
 
 .text {
   width: 100%;
-   @include ell
+  @include ell2(1);
 }
 </style>
