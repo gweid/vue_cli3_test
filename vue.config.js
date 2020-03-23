@@ -85,7 +85,7 @@ module.exports = {
         'import': []
       },
       sass: {
-        prependData: '@import "style/common.scss";' // 全局引入
+        prependData: '@import "@/style/common.scss";' // 全局引入
       }
     }
   },
