@@ -2,7 +2,9 @@ const path = require("path");
 const resolve = dir => path.join(__dirname, dir);
 const CompressionWebpackPlugin = require("compression-webpack-plugin")
 
+
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
+
 
 module.exports = {
   // true开启 false 关闭 eslint
@@ -60,10 +62,10 @@ module.exports = {
     // 拆包
     if (IS_PROD) {
       config.optimization.splitChunks({
-        chunks: 'all',
-        maxInitialRequests: Infinity,
+        chunks: 'all', // 表示哪些代码需要优化，有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为async
+        maxInitialRequests: Infinity, // 一个入口最大的并行请求数，默认为3
         minSize: 300000, // 依赖包超过300000bit将被单独打包
-        automaticNameDelimiter: '-',
+        automaticNameDelimiter: '-', // 命名连接符
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
