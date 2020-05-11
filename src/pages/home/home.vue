@@ -2,6 +2,7 @@
   <div class>
     <p class="title">首页</p>
     <cube-button @click="showPicker">Picker</cube-button>
+    <p class="text">哈哈哈哈哈哈哈哈哈奥哈哈或哈或哈或或或或或哈哈哈哈哈哈哈哈哈哈哈哈哈哈或哈或啊就就安静安静啊就家啊啊就就安静安静啊就就安静安静啊</p>
   </div>
 </template>
 
@@ -19,9 +20,7 @@ export default {
       ]
     };
   },
-  async mounted() {
-    
-  },
+  async mounted() {},
   methods: {
     showPicker() {
       if (!this.picker) {
@@ -46,5 +45,10 @@ export default {
 .title {
   color: red;
   font-size: 20px;
+}
+
+.text {
+  width: 100%;
+  @include ell2(1);
 }
 </style>
