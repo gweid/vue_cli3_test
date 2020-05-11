@@ -1,30 +1,23 @@
 <template>
-  <div class="">
-    <p>新闻详情</p>
+  <div class="news-detail">
+    <button @click="emitEvent">事件发布</button>
   </div>
 </template>
 
 <script>
-
 export default {
-  components: {
-
+  components: {},
+  data() {
+    return {};
   },
-  data () {
-    return {
-
-    };
-  },
-  mounted() {
-
-  },
+  mounted() {},
   methods: {
-
+    emitEvent() {
+      this.$eventBus.emit("emitEvent", { type: "tip" });
+    }
   }
-}
-
+};
 </script>
 
-<style lang="" scoped>
-
+<style lang="scss" scoped>
 </style>
