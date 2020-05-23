@@ -47,6 +47,7 @@ class Request {
             }
         }
 
+        // 创建一个 axios 实例
         const axios = Axios.create(Object.assign(this.config, option))
 
         this.reqIntercept(axios) // 请求拦截

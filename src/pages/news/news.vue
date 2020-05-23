@@ -27,7 +27,9 @@ import { lStorage } from "@/common/storage";
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      type: ""
+    };
   },
   // ---------------------组件内部路由守卫
   beforeRouteEnter(to, from, next) {
@@ -39,7 +41,12 @@ export default {
     console.log("离开", this); // 这个能获取到 this
     next();
   },
-  mounted() {},
+  mounted() {
+    this.$eventBus.on("emitEvent", data => {
+      this.type = data.type;
+      console.log(this.type);
+    });
+  },
   methods: {
     // add() {
     //   // this.$store.dispatch("handelAdd");  // dispatch 操作 action
