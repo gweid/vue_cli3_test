@@ -35,7 +35,7 @@ const routes = [{
     props: true, // 允许传的 id 在页面中以 props 接收
     component: Mine,
     meta: {
-      requireAuth: true  // 需要登录的页面
+      requireAuth: true // 需要登录的页面
     }
   },
   {
@@ -50,6 +50,11 @@ const routes = [{
       path: 'detail',
       component: NewsDetail
     }]
+  },
+  // 主要是 404 重定向回首页
+  {
+    path: "*",
+    redirect: "/home"
   }
 ]
 

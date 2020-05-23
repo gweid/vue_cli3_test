@@ -13,7 +13,7 @@ import {
 } from "./storage"
 import router from "../router"
 
-const config = {
+const defaultConfig = {
     baseURL: Config.BASEURL,
     timeout: 60000,
     headers: {
@@ -79,7 +79,11 @@ class Request {
                 console.log("===========================响应结果======================");
                 console.log(result.data);
 
-                return result.data;
+                if (result.data.code == 0) {
+                    return result.data;
+                } else {
+                    throw result.data
+                }
             },
             (error) => {
                 if (error && error.response.status) {
@@ -112,4 +116,4 @@ class Request {
     }
 }
 
-export default new Request(config)
+export default new Request(defaultConfig)

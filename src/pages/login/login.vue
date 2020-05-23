@@ -42,7 +42,9 @@ export default {
         console.log(path);
 
         this.$router.push({ path: path });
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
