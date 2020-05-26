@@ -5,8 +5,9 @@
 │   ├── api                     // api 集中管理
 │   ├── assets                  // 静态资源
 │   ├── common                  // 公共文件
-│   │   ├── request.js          // 封装请求
+│   │   ├── http.js             // 封装请求
 │   │   ├── storage.js          // 本地缓存
+│   │   ├── eventBus.js         // eventBus
 │   │   ├── tool.js             // 工具函数
 │   ├── components              // 组件
 │   ├── config                  // 配置文件
