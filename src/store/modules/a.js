@@ -1,27 +1,8 @@
+import mutations from "../mutations/a"
+import actions from "../actions/a"
+
 const state = {
     count: 100
-}
-
-const mutations = {
-    addCount(state) {
-        state.count++
-    },
-    reduceCount(state) {
-        state.count--
-    }
-}
-
-const actions = {
-    handelAdd: ({
-        commit // es6 解构赋值
-    }) => {
-        commit('addCount')
-    },
-    handelReduce: ({
-        commit
-    }) => {
-        commit('reduceCount')
-    }
 }
 
 export default {

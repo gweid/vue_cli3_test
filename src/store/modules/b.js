@@ -1,27 +1,8 @@
+import mutations from "../mutations/b"
+import actions from "../actions/b"
+
 const state = {
     price: 100
-}
-
-const mutations = {
-    addPrice(state) {
-        state.price++
-    },
-    reducePrice(state) {
-        state.price--
-    }
-}
-
-const actions = {
-    handelPriceAdd: ({
-        commit // es6 解构赋值
-    }) => {
-        commit('addPrice')
-    },
-    handelPriceReduce: ({
-        commit
-    }) => {
-        commit('reducePrice')
-    }
 }
 
 export default {

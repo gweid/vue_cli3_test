@@ -3,7 +3,7 @@
     <p>新闻页</p>
     <div>
       <button @click="reduce">-</button>
-      <span>{{$store.state.moduleA.count}}</span>
+      <span>{{count}}</span>
       <button @click="add">+</button>
     </div>
     <div>
@@ -21,11 +21,14 @@
 </template>
 
 <script>
-import { mapActions } from "vuex"; // vuex 的 action 高级用法， 映射
+import { mapState, mapActions } from "vuex"; // vuex 的 action 高级用法， 映射
 import { lStorage } from "@/common/storage";
 
 export default {
   components: {},
+  computed: {
+    ...mapState('moduleA', ['count'])
+  },
   data() {
     return {
       type: ""
