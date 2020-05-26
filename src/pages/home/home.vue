@@ -4,6 +4,7 @@
     <p class="title">首页</p>
     <cube-button @click="showPicker">Picker</cube-button>
     <p class="text">哈哈哈哈哈哈哈哈哈奥哈哈或哈或哈或或或或或哈哈哈哈哈哈哈哈哈哈哈哈哈哈或哈或啊就就安静安静啊就家啊啊就就安静安静啊就就安静安静啊</p>
+    <cube-button @click="showToast">toast封装成插件形式</cube-button>
   </div>
 </template>
 
@@ -40,7 +41,13 @@ export default {
     selectHandle(selectedVal, selectedIndex, selectedText) {
       console.log(selectedVal);
     },
-    cancelHandle() {}
+    cancelHandle() {},
+
+    showToast() {
+      this.$toast({
+        title: "欢迎使用 toast 清提示"
+      });
+    }
   }
 };
 </script>

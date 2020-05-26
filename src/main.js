@@ -7,8 +7,11 @@ import store from './store'
 import filters from './filters'
 import 'amfe-flexible'
 import eventBus from './common/eventBus'
+import toast from "./components/cm-toast"
 
 Vue.config.productionTip = false
+
+Vue.use(toast)
 
 // 全局注册过滤器
 Object.keys(filters).forEach((filterName) => {
